@@ -767,4 +767,10 @@ namespace Walnut {
 		s_ResourceFreeQueue[s_CurrentFrameIndex].emplace_back(func);
 	}
 
+	//void Application::SetWindowSizeCallback(GLFWwindowsizefun windowResizeCallback)
+	//void Application::SetWindowSizeCallback(std::function<void(GLFWwindow* handle, int width, int height)> windowResizeCallback)
+	void Application::SetWindowSizeCallback(void(*windowResizeCallback)(GLFWwindow* handle, int width, int height))
+	{
+		glfwSetWindowSizeCallback(m_WindowHandle, windowResizeCallback);
+	}
 }

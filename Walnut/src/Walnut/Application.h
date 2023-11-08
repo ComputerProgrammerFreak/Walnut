@@ -13,6 +13,7 @@
 void check_vk_result(VkResult err);
 
 struct GLFWwindow;
+//typedef void (*GLFWwindowsizefun)(GLFWwindow* window, int width, int height);
 
 namespace Walnut {
 
@@ -33,6 +34,9 @@ namespace Walnut {
 
 		void Run();
 		void SetMenubarCallback(const std::function<void()>& menubarCallback) { m_MenubarCallback = menubarCallback; }
+		void SetWindowSizeCallback(void(*windowResizeCallback)(GLFWwindow* handle, int width, int height));
+		//void SetWindowSizeCallback(std::function<void(GLFWwindow* handle, int width, int height)> windowResizeCallback);
+		//void SetWindowSizeCallback(GLFWwindowsizefun windowResizeCallback);
 		
 		template<typename T>
 		void PushLayer()

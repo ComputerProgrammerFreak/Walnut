@@ -29,6 +29,13 @@ namespace Walnut {
 		return { (float)x, (float)y };
 	}
 
+	void Input::SetMousePosition(const double& x, const double& y)
+	{
+		GLFWwindow* windowHandle = Application::Get().GetWindowHandle();
+
+		glfwSetCursorPos(windowHandle, x, y);
+	}
+
 	void Input::SetCursorMode(CursorMode mode)
 	{
 		GLFWwindow* windowHandle = Application::Get().GetWindowHandle();

@@ -13,6 +13,7 @@ namespace Walnut {
 		static bool IsMouseButtonDown(MouseButton button);
 
 		static glm::vec2 GetMousePosition();
+		static void SetMousePosition(const double& x, const double& y);
 
 		static void SetCursorMode(CursorMode mode);
 	};
